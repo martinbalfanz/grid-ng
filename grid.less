@@ -1,0 +1,38 @@
+/*
+  chocolatey-grid (https://github.com/anthracite/chocolatey-grid)
+  ---------------
+
+  usage: .column;                        // single column
+         .column({number of columns});
+         .column({number of columns},0); // column with margin-right:0;
+
+         for full page-width:
+         .content;
+
+  tested in: - Safari
+             - Chrome
+             - Firefox
+
+  license: http://creativecommons.org/licenses/by-sa/3.0/
+
+  ~ Martin Balfanz (https://github.com/anthracite)
+*/
+
+
+/* initial variables that define the grid */
+@columns: 12;
+@column-width: 52px;
+@gutter-width: 32px;
+
+/* content-container-class in page-width, centered */
+.content {
+  width: @columns * (@column-width + @gutter-width) - @gutter-width;
+  margin: 0 auto;
+}
+
+/* .column, .column(x), .column(x,0) */
+.column (@cols:1, @margin-right:@gutter-width) {
+  width: @cols * (@column-width + @gutter-width) - @gutter-width;
+  float: left;
+  margin-right: @margin-right;
+}
