@@ -1,3 +1,45 @@
 * chocolatey-grid
   - simple grid system based on [[http://lesscss.org/][less.js]]
-  - insprired by [[http://germanforblack.com/][Ben Schwarz]]
+  - inspired by [[http://germanforblack.com/][Ben Schwarz]]'s [[http://germanforblack.com/articles/handling-website-design-with-grids][article]] on grid systems
+
+** customize
+   Chocolatey-grid is customizable. You can specify the number of
+   columns, the column-width and the gutter-width. Hopefully the code
+   is self-explanatory.
+
+** usage
+   There is one basic mixin that defines the grid.
+   #+BEGIN_SRC css
+   .column;                        /* single column */
+   .column({number-of-columns});   
+   .column({number-of-columns},0); /* column with margin-right:0; */
+   #+END_SRC
+   e.g.: a 2 column layout
+   #+BEGIN_SRC css
+   nav {
+     .column(3);
+   }
+
+   article {
+     .column(9,0);
+   }
+   #+END_SRC
+
+   Additionally, I added a content-container-class called ".content"
+   which centers an element and applies the full page width calculated
+   from the initial values of the grid.
+   : width = {number-of-columns} * {column-width} + ({number-of-columns} - 1) * {gutter-width}
+   Use it as a mixin, e.g.:
+   #+BEGIN_SRC css
+   .container {
+     .content;
+
+     nav {
+       .column(3);
+     }
+
+     article {
+       .column(9,0);
+     }
+   }
+   #+END_SRC
