@@ -24,6 +24,11 @@
 @column-width: 52px;
 @gutter-width: 32px;
 
+/* fixing background issues on smaller screensizes with horizontal scrollbar */
+body {
+  min-width: @columns * (@column-width + @gutter-width) - @gutter-width;
+}
+
 /* content-container-class in page-width, centered */
 .content {
   width: @columns * (@column-width + @gutter-width) - @gutter-width;
