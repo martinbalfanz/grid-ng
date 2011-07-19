@@ -1,9 +1,9 @@
-* chocolatey-grid
+* grid-ng
   - simple grid system based on [[http://lesscss.org/][less.js]]
   - inspired by [[http://germanforblack.com/][Ben Schwarz]]'s [[http://germanforblack.com/articles/handling-website-design-with-grids][article]] on grid systems
 
 ** customize
-   Chocolatey-grid is customizable. You can specify the number of
+   grid-ng is customizable. You can specify the number of
    columns, the column-width and the gutter-width. Hopefully the code
    is self-explanatory.
 
